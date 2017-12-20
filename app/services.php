@@ -1,10 +1,15 @@
 <?php
 
-use Phalcon\DI\FactoryDefault;
+use Phalcon\DI\FactoryDefault as DI;
+use Phalcon\DI\FactoryDefault\CLI as CliDI;
 use Phalcon\Config\Adapter\Ini as ConfigIni;
 use Phalcon\Session\Adapter\Files as SessionAdapter;
 
-$di = new FactoryDefault();
+if (APP == 'api') {
+    $di = new DI();
+} else {
+    $di = new CliDI();
+}
 
 // 配置项
 $di->set('config', function() {
@@ -36,7 +41,9 @@ $di->set('session', function() use ($di) {
 });
 
 // 返回数据
-$di->get('response')->setHeader("Content-Type", "application/json; charset=utf-8");
-$di->get('response')->setHeader("Version", $di->get('config')->get('app')->version);
+if (APP == 'api') {
+    $di->get('response')->setHeader("Content-Type", "application/json; charset=utf-8");
+    $di->get('response')->setHeader("Version", $di->get('config')->get('app')->version);
+}
 
 return $di;

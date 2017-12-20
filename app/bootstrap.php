@@ -17,6 +17,7 @@ $loader->registerDirs([
     ROOT_PATH.'/app/exceptions',
     ROOT_PATH.'/app/forms',
     ROOT_PATH.'/app/models',
+    ROOT_PATH.'/app/tasks',
     ROOT_PATH.'/app/utils',
 ])->register();
 
