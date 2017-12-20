@@ -1,6 +1,6 @@
 ##  phalcon-restful
 A clear, simple and efficient phalcon restful framework based on phalcon3.2.   
-`清晰` `简单` `高效`
+`清晰` `简单` `高效` `无依赖`
 
 ### 概览
 #### 1. 文件目录
@@ -87,6 +87,11 @@ curl -XDELETE [domain]/dishes/1
 #### 5. 辅助参数
 `_token`可以代替基于浏览器的cookie, 适用于非浏览器环境的客户端。   
 `_method`可以强制改变请求方法, 适用于调试等一些特殊情况。
+
+#### 6. 命令行应用
+```
+php ./cli.php [task] [action] [param1] [param2] ...
+```
 
 
 ### 部署
