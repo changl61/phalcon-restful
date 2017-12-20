@@ -23,3 +23,16 @@ $loader->registerDirs([
 $loader->registerClasses([
 
 ]);
+
+
+// -----------------------------
+// 辅助参数
+// -----------------------------
+if (isset($_REQUEST['_token'])) {
+    $_COOKIE['_token'] = $_REQUEST['_token'];
+    setcookie('_token', '');
+}
+
+if (isset($_REQUEST['_method'])) {
+    $_SERVER['REQUEST_METHOD'] = strtoupper($_REQUEST['_method']);
+}
