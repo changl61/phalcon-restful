@@ -1,6 +1,6 @@
 ##  phalcon-restful
 A clear, simple and efficient phalcon restful framework based on phalcon3.2.   
-`s`
+`清晰` `简单` `高效`
 
 ### 概览
 #### 1. 文件目录
@@ -31,6 +31,8 @@ A clear, simple and efficient phalcon restful framework based on phalcon3.2.
 │   │   ├── PrivilegeModel.php
 │   │   ├── UserModel.php
 │   │   └── UserRoleModel.php
+│   ├── tasks                       // 命令行任务
+│   │   └── MainTask.php
 │   ├── utils                       // 工具类
 │   │   ├── AppRouter.php
 │   │   ├── Collection.php
